@@ -7,8 +7,7 @@ const headers = {
 }
 
 export async function getPrestadores() {
-  const response = await axios.get(`${baseUrl}//prestadores?size=15&perfil_id=0&perfil_cod`, headers);
-  console.log(response)
-  console.log(response.data.LISTA)
+  const response = await axios.get(`${baseUrl}/prestadores?size=15&perfil_id=0&perfil_cod`, headers);
+  
   return {lista: response.data.LISTA, total: response.data.LISTA_SIZE};
 }

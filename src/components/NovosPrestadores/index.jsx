@@ -17,9 +17,6 @@ export default function NovosPrestadores() {
     const asyncGetPrestadores = async () => {
       try {
         const response = await getPrestadores();
-        console.log("response", response);
-        console.log("response", response.lista);
-        console.log(response.total);
         setColaboradores(response.lista);
         setTotal(response.total - 1);
       } catch (error) {
@@ -30,10 +27,6 @@ export default function NovosPrestadores() {
     asyncGetPrestadores();
   }, []);
 
-  useEffect(() => {
-    console.log("colab", colaboradores);
-    console.log("total", total);
-  }, [colaboradores, total]);
 
   return (
     <section className="section">
